@@ -516,3 +516,13 @@
     background: #131313;
     font-size: 1rem;
 }
+
+.services__card button:hover {
+    cursor: pointer;
+}
+
+.services__card:hover {
+    transform: scale(1.075);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
