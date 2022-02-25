@@ -36,10 +36,24 @@ const highlightMenu = () => {
         return;
     }
 
-    if ( elem || (window.innerWidth < 960 && scrollPos < 600)){
+    if ( elem || (elem && window.innerWidth < 960 && scrollPos < 600)){
         elem.classList.remove('highlight');
     }
 }
 
 window.addEventListener('scroll', highlightMenu);
 window.addEventListener('click', highlightMenu);
+
+
+// close mobile menu when clicking on a menu item
+
+const hideMobileMenu = () => {
+    const menuBars = document.querySelector('.is-active');
+    if(window.innerWidth <= 768 && menuBars) {
+        menu.classList.toggle('is-active');
+        menuLinks.classList.remove('active');
+    }
+}
+
+menuLinks.addEventListener('click', hideMobileMenu);
+navLogo.addEventListener('click', hideMobileMenu);
